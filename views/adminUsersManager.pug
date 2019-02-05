@@ -1,0 +1,15 @@
+html
+    head
+        link(rel="stylesheet" href="/css/main.css")
+    body
+        header
+            nav.app-nav
+                    ul.app-nav__list
+                        li.app-nav__list-item
+                            a.app-nav__link(href="/adminHome") home
+                        li.app-nav__list-item
+                            a.app-nav__link(href="/adminHome/colony") colony
+                        li.app-nav__list-item
+                            a.app-nav__link.app-nav__link--is-active(href="/adminHome/users")  users
+            .wrapperAdmin
+                | Users Manager. 

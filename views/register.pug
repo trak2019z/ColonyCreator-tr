@@ -1,0 +1,40 @@
+html
+    head
+        link(rel="stylesheet" href="css/main.css")
+    body
+             .lightbox
+                .lightbox__content
+                    if errors
+                        ul
+                            each error in errors
+                                li= error.msg   
+                    form.lightbox__form(action="/register/checklog" method="POST")
+                        .lightbox__header.lightbox__form-control
+                            label.lightbox__label name:
+                            input.lightbox__input(placeholder="name" type="text" name="name")
+                        .lightbox__header.lightbox__form-control
+                            label.lightbox__label surname:
+                            input.lightbox__input(placeholder="surname" type="text" name="surname")
+                        .lightbox__header.lightbox__form-control
+                            label.lightbox__label e-mail:
+                            input.lightbox__input(placeholder="e-mail" type="text" name="mail")
+                        .lightbox__header.lightbox__form-control
+                            label.lightbox__label login:
+                            input.lightbox__input(placeholder="login" type="text" name="login")
+                        .lightbox__header.lightbox__form-control
+                            label.lightbox__label password:
+                            input.lightbox__input(placeholder="password" type="password" name="password")
+                        .lightbox__header.lightbox__form-control
+                            label.lightbox__label confirm password:
+                            input.lightbox__input(placeholder="password" type="password" name="confirmPassword")
+                        .lightbox__header.lightbox__form-control
+                            label.lightbox__label user type:
+                            .checkbox_input
+                                input.lightbox__input(type="radio" name="userType" value="organizer" checked)
+                                .checkbox_text organizer
+                            .checkbox_input
+                                input.lightbox__input(type="radio" name="userType" value="participant" )
+                                .checkbox_text participant
+                        .lightbox__header.lightbox__form-control.clc
+                            button.btn.btn--primary Register
+                            a(href="/").btn.btn--shadow back

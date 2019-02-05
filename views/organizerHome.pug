@@ -1,0 +1,17 @@
+html
+    head
+        link(rel="stylesheet" href="css/main.css")
+    body
+        header
+            nav.app-nav
+                    ul.app-nav__list
+                        li.app-nav__list-item
+                            a.app-nav__link.app-nav__link--is-active(href="/organizerHome") home
+                        li.app-nav__list-item
+                            a.app-nav__link(href="/organizerHome/createColony") create colony
+                        li.app-nav__list-item
+                            a.app-nav__link(href="/organizerHome/myColony")  my colony
+                        li.app-nav__list-item
+                            a.app-nav__link(href="/logout")  Log out
+            .wrapperAdmin
+                | Welcome in organizer panel.

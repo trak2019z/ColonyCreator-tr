@@ -1,0 +1,35 @@
+html
+    head
+        link(rel="stylesheet" href="/css/main.css")
+    body
+        header
+            nav.app-nav
+                    ul.app-nav__list
+                        li.app-nav__list-item
+                            a.app-nav__link(href="/organizerHome") home
+                        li.app-nav__list-item
+                            a.app-nav__link(href="/organizerHome/createColony") create colony
+                        li.app-nav__list-item
+                            a.app-nav__link.app-nav__link--is-active(href="/organizerHome/myColony")  my colony
+                        li.app-nav__list-item
+                            a.app-nav__link(href="/logout")  Log out
+            .wrapperAdmin
+                table
+                    tr
+                        th.colony_table_cell Colony Name         
+                        th.colony_table_cell Place
+                        th.colony_table_cell Participants
+                        th.colony_table_cell Start day
+                        th.colony_table_cell End day
+                        br
+                        each colony in colonies
+                            tr
+                                td.colony_table_cell= colony.colonyName
+                                td.colony_table_cell= colony.colonyPlace
+                                td.colony_table_cell= colony.participants
+                                td.colony_table_cell= colony.dayOfStart
+                                td.colony_table_cell= colony.dayOfEnd
+                                td.colony_table_cell 
+                                    a.app-nav__link(href="/organizerHome/edit/"+colony._id) edit
+                                td.colony_table_cell 
+                                    a.app-nav__link(href="/organizerHome/delete/"+colony._id ) delete

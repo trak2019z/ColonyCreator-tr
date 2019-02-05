@@ -1,0 +1,42 @@
+html
+    head
+        link(rel="stylesheet" href="/css/main.css")
+    body
+        header
+            nav.app-nav
+                    ul.app-nav__list
+                        li.app-nav__list-item
+                            a.app-nav__link(href="/organizerHome") home
+                        li.app-nav__list-item
+                            a.app-nav__link.app-nav__link--is-active(href="/organizerHome/createColony") create colony
+                        li.app-nav__list-item
+                            a.app-nav__link(href="/organizerHome/myColony")  my colony
+                        li.app-nav__list-item
+                            a.app-nav__link(href="/logout")  Log out
+            .wrapperAdmin
+                    .lightbox__content
+                        if success
+                            | Created succesfull
+                        if errors
+                            ul
+                                each error in errors
+                                    li= error.msg 
+                        form.lightbox__form(action='/organizerHome/edited/'+colony._id method="POST")
+                            .lightbox__header.lightbox__form-control
+                                label.lightbox__label colony name:
+                                input.lightbox__input(placeholder="Name of colony" type="text" name="colonyName" value= colony.colonyName)
+                            .lightbox__header.lightbox__form-control
+                                label.lightbox__label place:
+                                input.lightbox__input(placeholder="Location" type="text" name="colonyPlace" value= colony.colonyPlace)
+                            .lightbox__header.lightbox__form-control
+                                label.lightbox__label participants:
+                                input.lightbox__input( placeholder="Number of participants" type="number" min="1" name="participants" value= colony.participants)
+                            .lightbox__header.lightbox__form-control
+                                label.lightbox__label day of start:
+                                input.lightbox__input( type="date"  name="dayOfStart" value= colony.dayOfStart)
+                            .lightbox__header.lightbox__form-control
+                                label.lightbox__label day of end:
+                                input.lightbox__input( type="date" name="dayOfEnd" value= colony.dayOfEnd)
+                            .lightbox__header.lightbox__form-control
+                                button.btn.btn--primary save
+                                

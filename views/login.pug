@@ -1,0 +1,17 @@
+html
+    head
+        link(rel="stylesheet" href="css/main.css")
+    body
+        header
+             .lightbox
+                .lightbox__content
+                    form.lightbox__form(action="/login/logged" method="POST")
+                        .lightbox__header.lightbox__form-control
+                            label.lightbox__label login:
+                            input.lightbox__input(placeholder="login" type="text" name="login")
+                        .lightbox__header.lightbox__form-control
+                            label.lightbox__label password:
+                            input.lightbox__input(placeholder="password" type="password" name="password")
+                        .lightbox__header.lightbox__form-control
+                            button.btn.btn--primary Log in
+                            a(href="/").btn.btn--shadow back
