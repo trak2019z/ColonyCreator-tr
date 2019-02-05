@@ -1,14 +1,17 @@
 const express = require('express');
 const router = express.Router();
+const AdminController = require("../controllers/AdminController");
 
-router.get('/', (req, res) => {
-    res.render('adminHome');
-});
-router.get('/colony', (req, res) => {
-    res.render('adminColonyManager');
-});
-router.get('/users', (req, res) => {
-    res.render('adminUsersManager');
-});
+CreateColony = require('../models/createColony');
+Registration = require('../models/registration');
+
+router.get('/', AdminController.home);
+router.get('/colony', AdminController.show);
+router.get('/users', AdminController.users);
+
+router.post("/edited/:id", AdminController.edited);
+router.get("/delete/:id", AdminController.delete);
+router.get("/edit/:id", AdminController.edit);
+router.get("/deleteUser/:id", AdminController.deleteUser);
 
 module.exports = router;
